@@ -12,11 +12,11 @@ export default function Footer() {
     },
     {
       title: "Contact",
-      href: "",
+      href: ""
     },
     {
       title: "About",
-      href: "",
+      href: ""
     },
     {
       items: [
@@ -49,8 +49,9 @@ export default function Footer() {
                 <a
                   key={index}
                   href={section.href}
-                  target="_blank"
                   className="font-light px-1 text-center text-[#4B5E54] hover:underline"
+                  target={section.title === "Bay Valley Tech" || section.title === "Free Code Academy" ? "_blank" : undefined} // Open new tab only for external links
+                  rel={section.title === "Bay Valley Tech" || section.title === "Free Code Academy" ? "noopener noreferrer" : undefined} // Security for external links
                 >
                   {section.title}
                 </a>
